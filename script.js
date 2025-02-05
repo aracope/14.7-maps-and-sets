@@ -32,5 +32,29 @@ console.log(hasDuplicate([1,5,-1,4])); // false
 // vowelCount('awesome') // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
 // vowelCount('Colt') // Map { 'o' => 1 }
 
+function vowelCount(str) {
+  const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
+  const vowelMap = new Map();
+
+  for (let alpha of str.toLowerCase()) {
+    if (vowels.has(alpha)) {
+      vowelMap.set(alpha, (vowelMap.get(alpha) || 0) + 1);
+    }
+  }
+  return vowelMap;
+}
+
+// function vowelCount(str) {
+//     const vowels = ('aeiou');
+//     const vowelMap = new Map();
+  
+//     for (let alpha of str.toLowerCase()) {
+//       if (vowels.includes(alpha)) {
+//         vowelMap.set(alpha, (vowelMap.get(alpha) || 0) + 1);
+//       }
+//     }
+//     return vowelMap;
+//   }
+
 console.log(vowelCount('awesome')); // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
-console.loge(vowelCount('Colt')); // Map { 'o' => 1 }
+console.log(vowelCount('Colt')); // Map { 'o' => 1 }
